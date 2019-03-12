@@ -49,6 +49,9 @@
     <test-tool.node.exec>${test-tool.node.dir}/node</test-tool.node.exec>
     <test-tool.phantom.dir>${test-tool.dir}/phantomjs</test-tool.phantom.dir>
     <test-tool.phantom.exec>${test-tool.phantom.dir}/phantomjs</test-tool.phantom.exec>
+
+    <!-- scalatest -->
+    <version.scalatest>3.0.6</version.scalatest>
     
   </properties>
   
@@ -63,6 +66,19 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_${version.scala.epoch}</artifactId>
+      <version>${version.scalatest}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.scala-lang</groupId>
+          <artifactId>scala-reflect</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
     <dependency>
       <groupId>org.scala-js</groupId>
       <artifactId>scalajs-junit-test-runtime_${version.scala.epoch}</artifactId>
